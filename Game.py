@@ -1,41 +1,37 @@
 #Snake, Water, Gun Game
 import random
-k=0
-j=0
-i=1
+computer_point=0
+your_point=0
+count=1
 list=["Snake","Water","Gun"]
-while(i<=10):
+while(count<=10):
     print("Press 's' for snake,'w' for water,'g' for gun")
     a=input()
     choice = random.choice(list)
     print("PC chose", choice)
-    if(a=='s' and choice=="Snake"):
-        print("Tie so nobody gets a point")
-    elif(a=='w' and choice=="Water"):
-        print("Tie so nobody gets a point")
-    elif(a=='g' and choice=="Gun"):
+    if(a==choice):
         print("Tie so nobody gets a point")
     elif(a=='s' and choice=="Water"):
-        j=j+1
-        print("You got",j,"point")
+        your_point=your_point+1
+        print("You got",your_point,"point")
     elif (a == 's' and choice == "Gun"):
-        k = k + 1
-        print("PC got", k, "point")
+        computer_point = computer_point + 1
+        print("PC got", computer_point, "point")
     elif (a == 'w' and choice == "Gun"):
-        j = j + 1
-        print("You got", j, "point")
+        your_point = your_point + 1
+        print("You got", your_point, "point")
     elif (a == 'w' and choice == "Snake"):
-        k = k + 1
-        print("PC got", k, "point")
+        computer_point = computer_point + 1
+        print("PC got", computer_point, "point")
     elif (a == 'g' and choice == "Snake"):
-        j = j + 1
-        print("You got", j, "point")
+        your_point = your_point + 1
+        print("You got", your_point, "point")
     elif (a == 'g' and choice == "Water"):
-        k = k + 1
-        print("PC got", k, "point")
-    i=i+1
+        computer_point = computer_point + 1
+        print("PC got", computer_point, "point")
+    count=count+1
 print("\nChances over!!")
-if (k>j):
+if (computer_point>your_point):
     print("\nPC won the game...Better luck next time!!")
 else:
     print("Congo!! You won the game")
